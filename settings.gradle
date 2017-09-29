@@ -1,0 +1,5 @@
+rootProject.name = 'elane-connector-ish-7.8'
+
+String[] subprojects = ['ac_atfogo_elane']
+
+include subprojects

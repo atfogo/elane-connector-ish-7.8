@@ -1,0 +1,11 @@
+# Intershop Studio
+**/.classpath
+**/.project
+**/.apt_generated/
+**/.settings/
+**/bin/
+
+# Gradle
+**/.gradle
+**/build/
+**/target/

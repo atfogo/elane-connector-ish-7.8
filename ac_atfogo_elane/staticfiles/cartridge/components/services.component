@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<components xmlns="http://www.intershop.de/component/2010">
+
+    <implementation name="ElaneServiceDefinition" implements="ServiceDefinition" class="de.atfogo.elane.internal.ElaneServiceDefinition">
+        <requires name="Adapter" contract="AdapterMapEntry" cardinality="0..n" />
+    </implementation>
+
+    <instance name="elaneServiceDefinition" with="ElaneServiceDefinition">
+        <fulfill requirement="Adapter">
+            <instance with="AdapterMapEntry">
+                <fulfill requirement="key" value="ElaneAdapter" />
+                <fulfill requirement="value" value="de.atfogo.elane.internal.ElaneAdapter" />
+            </instance>
+        </fulfill>
+    </instance>
+
+    <fulfill requirement="serviceDefinition" of="serviceDefinitionRegistry">
+        <instance with="ServiceDefinitionRegistry.Entry">
+            <fulfill requirement="cartridgeID" value="ac_atfogo_elane" />
+            <fulfill requirement="groupID" value="service.group.name.elane" />
+            <fulfill requirement="parameterGroupID" value="elane.io Service" />
+            <fulfill requirement="serviceDefinitionID" value="ElaneServiceDefinition" />
+            <fulfill requirement="localizationKeyForName" value="service.definition.name.elane" />
+            <fulfill requirement="serviceDefinition" with="elaneServiceDefinition" />
+        </instance>
+    </fulfill>
+
+</components>

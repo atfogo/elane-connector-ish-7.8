@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.intershop.com/xml/ns/enfinity/7.0/configdef">
+
+    <group name="elane.io Service">
+        <parameter name="adapter.selector.elaneServiceDefinition" type="String" position="10" required="true">
+            <labelKey>service.param.label.elane.adapter</labelKey>
+            <descriptionKey>service.param.desc.elane.adapter</descriptionKey>
+            <predefined position="10" value="ElaneAdapter">
+                <valueKey>service.predef.value.elane.ElaneAdapter</valueKey>
+            </predefined>
+        </parameter>
+        <parameter name="elane.siteKey" type="String" position="20" required="true">
+            <labelKey>service.param.label.elane.siteKey</labelKey>
+            <descriptionKey>service.param.desc.elane.siteKey</descriptionKey>
+        </parameter>
+        <parameter name="elane.integration" type="String" position="30" required="true">
+            <labelKey>service.param.label.elane.integration</labelKey>
+            <descriptionKey>service.param.desc.elane.integration</descriptionKey>
+            <predefined position="10" value="AUTOMATIC">
+                <valueKey>service.predef.value.elane.AUTOMATIC</valueKey>
+            </predefined>
+            <predefined position="20" value="MANUAL">
+                <valueKey>service.predef.value.elane.MANUAL</valueKey>
+            </predefined>
+        </parameter>
+    </group>
+
+</definitions>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<included xmlns="http://ch.qos.logback/xml/ns/logback">
+
+    <appender name="ElaneFile" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>INFO</level>
+        </filter>
+        <File>${intershop.logfile.Directory}/elane-${intershop.logfile.NamePostfix}.log</File>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <FileNamePattern>${intershop.logfile.Directory}/elane-${intershop.logfile.NamePostfix}-%d{yyyy-MM-dd}.log.zip</FileNamePattern>
+        </rollingPolicy>
+        <encoder class="ch.qos.logback.core.encoder.LayoutWrappingEncoder">
+            <layout class="ch.qos.logback.classic.PatternLayout">
+                <Pattern>[%date{yyyy-MM-dd HH:mm:ss.SSS zZ}] %-5level ${intershop.HostName} ${intershop.InstallationID} ${intershop.ServerName} [%mdc{requestsite}] [%mdc{requestapplication}] %logger [%marker] [%mdc{request.type}] [%mdc{session.id}] [%mdc{request.uuid}] &quot;%thread&quot; %msg %ex%n</Pattern>
+            </layout>
+        </encoder>
+    </appender>
+    
+    <logger name="de.atfogo.elane">
+        <appender-ref ref="ElaneFile" />
+    </logger>       
+
+</included>

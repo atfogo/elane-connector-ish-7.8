@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<components xmlns="http://www.intershop.de/component/2010">
+
+    <implementation name="ElaneRenderEventListener" implements="RenderEventListener" class="de.atfogo.elane.internal.ElaneRenderEventListener">
+        <requires name="priority" contract="Integer" cardinality="1..1" />
+    </implementation>
+
+</components>
