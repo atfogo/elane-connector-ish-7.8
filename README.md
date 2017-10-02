@@ -28,7 +28,7 @@ For the sake of simplicity the rest of this document assumes that Linux with Bas
 
 The elane.io connector is available in source form which can be downloaded from the official git repository.
 
-    # git clone https://github.com/atfogo/elane-connector-ish-7.8.git
+    [projects]# git clone https://github.com/atfogo/elane-connector-ish-7.8.git
 
 ## 4. Building the source code
 
@@ -89,7 +89,7 @@ Edit the file `gradle/wrapper/gradle-wrapper.properties` to set the URL for the 
 
 Use the default `gradlew` task provided by Intershop to build the cartridge.
 
-    # ./gradlew publish -PrunOnCI=true
+    [projects/elane-connector-ish-7.8]# ./gradlew publish -PrunOnCI=true
 
 In the local development environment the compiled artifacts should be available in the directory `~/.gradle/.localRepo/de.atfogo/ac_atfogo_elane/`.
 
@@ -109,6 +109,8 @@ Edit the file `a_responsive/as_responsive/staticfiles/cartridge/components/apps.
         <fulfill requirement="selectedCartridge" value="ac_atfogo_elane" />
 
 Build the assembly and deploy the application server.
+
+    [projects/a_responsive]# ./gradlew publish deployServer
 
 ## 5. Configuration of the service
 
