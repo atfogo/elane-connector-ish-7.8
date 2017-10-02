@@ -98,7 +98,7 @@ In the local development environment the compiled artifacts should be available 
 Edit the file `a_responsive/as_responsive/build.gradle` and add the elane.io cartridge to the build dependencies.
 
     dependencies {
-        compile group: 'de.atfogo', name: 'ac_atfogo_elane', version: '1.0.0.0'
+        compile group: 'de.atfogo', name: 'ac_atfogo_elane', version: '1.0.0.1'
 
 Edit the file `a_responsive/as_responsive/staticfiles/cartridge/components/apps.component` and add the elane.io cartridge to the storefront cartridge list.
 
