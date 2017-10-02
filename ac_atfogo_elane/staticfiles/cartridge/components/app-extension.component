@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<components xmlns="http://www.intershop.de/component/2010">
+
+    <fulfill requirement="selectedCartridge" of="intershop.SLDSystem.Cartridges" value="ac_atfogo_elane" />
+
+    <fulfill requirement="selectedCartridge" of="intershop.EnterpriseBackoffice.Cartridges" value="ac_atfogo_elane" />
+
+</components>

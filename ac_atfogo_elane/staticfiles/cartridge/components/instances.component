@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<components xmlns="http://www.intershop.de/component/2010">
+
+    <instance name="elaneRenderEventListener" with="ElaneRenderEventListener">
+        <fulfill requirement="priority" value="10" />
+    </instance>
+
+    <fulfill requirement="listener" of="renderEventHandler" with="elaneRenderEventListener" />
+
+</components>

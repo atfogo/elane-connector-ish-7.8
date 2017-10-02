@@ -1,0 +1,53 @@
+description 'Adapter - elane.io'
+version = '1.0.0.0'
+group = 'de.atfogo'
+
+apply plugin: 'ivy-publish'
+apply plugin: 'com.intershop.gradle.simplepublish-configuration'
+
+assert System.properties['java.version'].startsWith('1.8')
+
+subprojects {
+    apply plugin: 'intershop-base'
+    apply plugin: 'com.intershop.gradle.buildinfo'
+    apply plugin: 'com.intershop.gradle.javadoc-configuration'
+    apply plugin: 'com.intershop.gradle.javasource-plugin'
+
+    group = rootProject.group
+    version = rootProject.version
+
+    intershop {
+        productName = 'Adater - elane.io'
+        productCopyrightOwner = 'atfogo GmbH'
+    }
+
+    plugins.withType(JavaBasePlugin) {
+        sourceCompatibility = '1.8'
+        targetCompatibility = '1.8'
+    }
+
+    tasks.withType(JavaCompile) {
+        options.deprecation = true
+    }
+
+    versioning {
+	    useVersionsFrom 'com.intershop.assembly:commerce_management_b2x'
+    }
+
+    dependencies {
+        // required by the ISML compiler
+        compile 'org.slf4j:slf4j-api'
+        compile 'org.apache.tomcat:tomcat-el-api'
+        compile 'javax.servlet:javax.servlet-api'
+    }
+}
+
+buildscript {
+    dependencies {
+        classpath('com.intershop.gradle.publish:gradle-release-plugins:3.5.3') {
+            // version 3.4.4 or newer, because it also includes the trilead fix
+            exclude group: 'com.intershop.gradle.jiraconnector', module: 'jiraconnector-gradle-plugin'
+        }
+        classpath 'com.intershop.build.gradle:ish-component-plugin:2.11.5'
+    }
+}

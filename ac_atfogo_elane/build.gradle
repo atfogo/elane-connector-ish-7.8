@@ -1,0 +1,21 @@
+apply plugin: 'java-cartridge'
+apply plugin: 'static-cartridge'
+
+intershop {
+    displayName = 'Adapter - elane.io'
+    description = 'Adapter - elane.io'
+}
+
+dependencies {
+    compile group: 'com.intershop.business', name: 'bc_catalog'
+    compile group: 'com.intershop.content',  name: 'bc_pmc'
+    compile group: 'com.intershop.platform', name: 'app'
+    compile group: 'com.intershop.platform', name: 'bc_application'
+    compile group: 'com.intershop.platform', name: 'bc_repository'
+    compile group: 'com.intershop.platform', name: 'bc_service'
+    compile group: 'com.intershop.platform', name: 'businessobject'
+    compile group: 'com.intershop.platform', name: 'configuration'
+    compile group: 'com.intershop.platform', name: 'core'
+    compile group: 'com.intershop.platform', name: 'isml'
+    compile group: 'com.intershop.platform', name: 'servletengine'
+}
